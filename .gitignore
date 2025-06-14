@@ -1,0 +1,22 @@
+# Entorno virtual de Python
+venv/
+
+# Base de datos local de Django
+db.sqlite3
+
+# Archivos de caché y compilados de Python
+__pycache__/
+*.pyc
+
+# Carpeta de dependencias de Node.js
+frontend/node_modules/
+
+# Archivos de build de React
+frontend/build/
+
+# Archivos de log y entorno de React
+frontend/.pnp.js
+frontend/.pnp.loader.mjs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
