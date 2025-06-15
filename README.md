@@ -8,6 +8,13 @@ Este proyecto fue construido desde cero como una plataforma completa, utilizando
 
 ---
 
+### 📊 Análisis de Datos: Incendios en Valparaíso 2024
+
+Una de las características clave de este proyecto es la capacidad de procesar y analizar los datos obtenidos. Utilizando **Pandas** y **Matplotlib** en el backend, se generó el siguiente análisis sobre los incendios registrados en la Región de Valparaíso durante la temporada 2024.
+
+![Análisis de Incendios por Comuna](https://raw.githubusercontent.com/usrCarlos/observatorio-ambiental-chile/beecc00375d259c366173245bcde225f5ebd09a1/frontend/src/grafico_incendios_valparaiso_2024.png)
+
+*(Nota: Este gráfico se genera programáticamente a través de un script que interactúa directamente con la base de datos de la aplicación.)*
 
 ### 🚀 Stack Tecnológico
 
@@ -31,13 +38,13 @@ Este proyecto utiliza una arquitectura de servicios desacoplados, una práctica 
 ### 📋 Características Principales
 
 * **Dashboard Unificado:** Centraliza la información de sismos e incendios en una sola vista.
-* **Consumo de APIs Externas:**
-    * **Sismos:** Integra datos del USGS (Servicio Geológico de EE. UU.).
-    * **Incendios:** Procesa y filtra datos desde una fuente CSV publicada por CONAF.
-* **Actualización Automática:** El frontend busca nuevos datos cada 60 segundos sin necesidad de recargar la página (polling).
-* **Paginación:** Maneja de forma eficiente la visualización de cientos de registros de incendios para una experiencia de usuario fluida.
-* **Despliegue Profesional:** Arquitectura completamente desplegada en servicios en la nube, con el backend y frontend funcionando de manera independiente pero conectada.
-* **Carga de Datos Automatizada:** Utiliza migraciones de datos de Django para poblar la base de datos de producción durante el despliegue inicial.
+* **Consumo de APIs Externas:** Integra datos del USGS (sismos) y procesa datos desde una fuente CSV (incendios).
+* **Análisis y Visualización:** Incluye un script de análisis de datos en Python que genera gráficos estadísticos sobre los datos recopilados, los cuales se visualizan en el frontend.
+* **Actualización Automática:** El frontend busca nuevos datos cada 60 segundos (polling).
+* **Paginación:** Maneja de forma eficiente la visualización de cientos de registros de incendios.
+* **Despliegue Profesional:** Arquitectura full-stack desplegada en Render y Vercel.
+* **Carga de Datos Automatizada:** Utiliza migraciones de datos de Django para poblar la base de datos de producción durante el despliegue.
+
 
 ---
 
