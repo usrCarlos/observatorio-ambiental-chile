@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// NUEVO: Importamos la imagen del gráfico desde la carpeta src.
+import graficoIncendios from './grafico_incendios_valparaiso_2024.png';
+
+
 // La URL base de la API se lee de las variables de entorno.
 // En local, usará el valor de .env.local. En Vercel, usará la variable que configures en el panel.
 const API_URL = process.env.REACT_APP_API_URL;
@@ -73,6 +77,21 @@ function App() {
 
       <div className="p-5 mb-4 bg-light rounded-3">
         <h2>Incendios Forestales Reportados 2024</h2>
+         {/* --- NUEVO: Contenedor para mostrar el gráfico --- */}
+        {/* Solo mostramos el gráfico si hay datos de incendios */}
+        {incendios.length > 0 && (
+            <div className="text-center my-4 p-3 bg-white rounded shadow-sm">
+                <h4 className="mb-3">Análisis de Incidentes por Comuna</h4>
+                <img 
+                    src={graficoIncendios} 
+                    alt="Gráfico de incendios por comuna en Valparaíso" 
+                    className="img-fluid rounded" 
+                />
+                <small className="d-block text-muted mt-2">Gráfico generado con Python (Matplotlib/Pandas) a partir de los datos de la base de datos.</small>
+            </div>
+        )}
+        {/* --- FIN DEL CONTENEDOR DEL GRÁFICO --- */}
+        
         {currentIncendios.length > 0 ? (
           <div>
             {currentIncendios.map(incendio => (
