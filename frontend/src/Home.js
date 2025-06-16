@@ -35,7 +35,7 @@ function Home() {
               <div className="card-body d-flex flex-column">
                 <h3 className="card-title">Sismos Recientes 🌎</h3>
                 <p className="card-text flex-grow-1">
-                  Visualiza los últimos sismos registrados por el Centro Sismológico Nacional de la Universidad de Chile. Datos actualizados cada minuto con magnitud, ubicación y fecha.
+                  Visualiza los últimos sismos registrados por el centro Sismológico (USGS) Datos actualizados cada minuto con magnitud, ubicación y fecha.
                 </p>
                 <Link to="/sismos" className="btn btn-primary mt-auto align-self-start">
                   Ver Sismos
