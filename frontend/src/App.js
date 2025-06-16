@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Quitamos Navigate que ya no es necesario aquí
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Sismos from './Sismos';      // Importa el nuevo componente
-import Incendios from './Incendios';  // Importa el nuevo componente
+import Home from './Home';          // <-- 1. IMPORTA el nuevo componente Home
+import Sismos from './Sismos';
+import Incendios from './Incendios';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
+                  {/* Nuevo enlace a Home, puedes agregarlo o dejar que el logo sea el único enlace a Home */}
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/">Inicio</Link>
+                  </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/sismos">Sismos</Link>
                   </li>
@@ -35,19 +40,14 @@ function App() {
         {/* Contenido dinámico según la ruta */}
         <main>
           <Routes>
+            <Route path="/" element={<Home />} /> {/* <-- 2. CAMBIA la ruta raíz */}
             <Route path="/sismos" element={<Sismos />} />
             <Route path="/incendios" element={<Incendios />} />
-            {/* Redirige la ruta raíz a la página de sismos por defecto */}
-            <Route path="/" element={<Navigate replace to="/sismos" />} />
           </Routes>
         </main>
       </div>
     </Router>
   );
 }
-
-// Asegúrate de que tu `index.js` tenga Bootstrap JS si quieres que el menú hamburguesa funcione en móviles
-// Si no lo tienes, el menú se verá bien en escritorio pero no se desplegará en pantallas pequeñas.
-// Para habilitarlo, añade a tu `index.js`: import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 export default App;

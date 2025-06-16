@@ -28,7 +28,7 @@ function Sismos() {
 
     return (
         <div className="p-5 mb-4 bg-light rounded-3">
-            <h2>Últimos Sismos Registrados 地震</h2>
+            <h2>Últimos Sismos Registrados </h2>
             {loading ? (
                 <div className="alert alert-info">Cargando sismos...</div>
             ) : sismos.length > 0 ? (
