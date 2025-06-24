@@ -3,7 +3,7 @@ from sismologia.services import obtener_y_guardar_sismos
 
 class Command(BaseCommand):
     # Ayuda que aparecerá cuando ejecutes: python manage.py help fetch_sismos
-    help = 'Obtiene los últimos datos de sismos desde la API de USGS y los guarda en la base de datos.'
+    help = 'Obtienes los últimos datos de sismos desde la API de USGS y los guarda en la base de datos.'
 
     def handle(self, *args, **kwargs):
         # Escribe un mensaje en la consola para indicar que el comando inició.
